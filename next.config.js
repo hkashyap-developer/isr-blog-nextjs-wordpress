@@ -12,23 +12,23 @@ const { protocol, hostname, port, pathname } = new URL(
 /** @type {import('next').NextConfig} */
 module.exports = {
 
+  env: {
+    WORDPRESS_API_URL: 'https://nidish.com/graphql/',
+  },
+
 swcMinify: true,
 optimizeFonts: true,
-  
   images: {
     remotePatterns: [
       {
         protocol: protocol.slice(0, -1),
         hostname,
-        port,
-        pathname: `${pathname}/**`,
+
       },
       {
         protocol: "https",
-        hostname: "secure.gravatar.com"
-      }
-
-      
+        hostname: "secure.gravatar.com",
+      },
     ],
     minimumCacheTTL: 15000000,
   },
