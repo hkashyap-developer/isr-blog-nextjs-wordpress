@@ -11,6 +11,10 @@ const { protocol, hostname, port, pathname } = new URL(
 
 /** @type {import('next').NextConfig} */
 module.exports = {
+
+swcMinify: true,
+optimizeFonts: true,
+  
   images: {
     remotePatterns: [
       {
@@ -19,6 +23,13 @@ module.exports = {
         port,
         pathname: `${pathname}/**`,
       },
+      {
+        protocol: "https",
+        hostname: "secure.gravatar.com"
+      }
+
+      
     ],
+    minimumCacheTTL: 15000000,
   },
 };
