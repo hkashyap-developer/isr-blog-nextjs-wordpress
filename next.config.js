@@ -1,6 +1,7 @@
 if (!URL.canParse(process.env.WORDPRESS_API_URL)) {
   throw new Error(`
-    https://avilancaster.com/?rest_route=/wp/v2
+    Please provide a valid WordPress instance URL.
+    Add to your environment variables WORDPRESS_API_URL.
   `);
 }
 
